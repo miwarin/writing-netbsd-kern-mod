@@ -30,3 +30,16 @@ kmod を make するとファイルがいろいろ作られる。ファイルを
     -rwxr--r-- 1 rin users  642 5月   6 15:25 test.c*
     lrwxr-xr-x 1 rin users   29 5月   6 14:54 x86 -> /usr/src/sys/arch/x86/include/
 
+
+```write``` に渡されるデータはユーザーランドから渡されたデータそのまま。たとえば rperm_write に以下のように ```printf``` すると
+
+        int i;
+        for(i = 0; i < sc.buf_len; i++)
+        {
+                printf("%02x ", sc.buf[i]);
+        }
+
+dmesg に以下のように出力される。0x20 は空白文字。
+
+    48 65 6c 6c 6f 20 4e 65 74 42 53 44 
+     H  e  l  l  o     N  e  t  B  S  D
