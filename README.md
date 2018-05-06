@@ -1,2 +1,3 @@
 # writing-netbsd-kern-mod
-Writing a NetBSD kernel modulet (study)
+
+study [Writing a NetBSD kernel module](https://saurvs.github.io/post/writing-netbsd-kern-mod/)
